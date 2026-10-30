@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggest an App — White Wolf Apps</title>
+<meta name="description" content="Tell White Wolf Apps the job you wish an app did. Practical single-purpose apps for contractors, farmers & small crews — offline-first, no subscriptions required.">
+<style>
+/* White Wolf Apps — Suggest an App (house layout after the White Wolf calculator hub;
+   brand colors sampled from the White Wolf Apps avatar: ink #101418, paper #f2f5f7, amber #e8a33d) */
+:root{
+  --ink:#1c2420; --muted:#5a665f; --line:#d8ded9;
+  --dark:#101418; --paper:#f2f5f7; --amber:#e8a33d; --amber-dark:#b97a1d;
+  --bg:#f6f7f5; --card:#ffffff; --soft:#eef3ef;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+a{color:#8a5c10}
+header.site{background:var(--dark);color:var(--paper);padding:18px 16px 16px;border-bottom:4px solid var(--amber)}
+header.site .wrap{max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline}
+header.site .brand{font-weight:800;font-size:22px;letter-spacing:.06em;color:var(--paper);text-decoration:none}
+header.site .brand .ww{color:var(--paper)} header.site .brand .apps{color:var(--amber)}
+header.site .tag{color:#c9d1d6;font-size:13.5px;width:100%}
+main{max-width:980px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:30px;line-height:1.2;margin:8px 0 10px}
+h2{font-size:20px;margin:26px 0 8px}
+p.lede{font-size:17px;color:#333d37;max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin:14px 0}
+label{font-size:13.5px;font-weight:600;color:#39443e;display:block;margin:14px 0 4px}
+label:first-of-type{margin-top:0}
+label .opt{font-weight:500;color:var(--muted)}
+input[type=text],input[type=email],textarea{width:100%;padding:10px;border:1px solid #b9c4bc;border-radius:8px;font-size:15.5px;background:#fff;color:var(--ink);font-family:inherit}
+textarea{resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber-dark)}
+button.submit{background:var(--dark);color:var(--paper);border:0;border-bottom:4px solid var(--amber);border-radius:9px;padding:14px 22px;font-size:17px;font-weight:700;cursor:pointer;width:100%;margin-top:18px}
+button.submit:hover{background:#1a2129}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 2px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13.5px;color:var(--ink);cursor:pointer;text-align:left}
+.chip:hover{border-color:var(--amber-dark);background:#fdf6e9}
+.formmsg{font-size:14px;margin-top:10px;min-height:1.2em}
+.formmsg.err{color:#9c2b1b;font-weight:600}
+.small{font-size:13.5px;color:var(--muted)}
+.fineprint{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:12px;max-width:75ch}
+.cta{display:inline-block;background:var(--dark);color:var(--paper);text-decoration:none;font-weight:700;padding:11px 20px;border-radius:9px;margin-top:8px;border-bottom:3px solid var(--amber)}
+footer.site{max-width:980px;margin:0 auto;padding:0 16px 34px;color:var(--muted);font-size:13.5px}
+footer.site .rule{border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="https://travisbriggs.gumroad.com"><span class="ww">WHITE WOLF</span> <span class="apps">APPS</span></a>
+    <span class="tag">Practical single-purpose apps for contractors, farmers &amp; small crews. Offline-first, no subscriptions required.</span>
+  </div>
+</header>
+<main>
+  <h1>Suggest an App</h1>
+  <p class="lede">Tell us the job you wish an app did. If we build it, you'll hear back.</p>
+  <p>White Wolf Apps makes small, single-purpose apps for people who work with their hands — bid calculators, job trackers, herd and crop logs, books for one-person businesses. Every app works offline, is bought once, and does one job well. The best ideas for the next one come from people doing the work, so if there's a chore you keep track of on paper, in a notebook, or in your head, we want to hear it.</p>
+
+  <h2>Need a spark? Ideas sound like this</h2>
+  <p class="small">Tap one to start your suggestion — then change the words to fit your work.</p>
+  <div class="chips">
+    <button type="button" class="chip" data-idea="An app that tracks chemical readings and service stops for pool cleaners">“An app that tracks chemical readings and service stops for pool cleaners”</button>
+    <button type="button" class="chip" data-idea="An app that tracks cuts, waste, and standing orders for a small butcher shop">“An app that tracks cuts, waste, and standing orders for a small butcher shop”</button>
+    <button type="button" class="chip" data-idea="An app that tracks trap lines, sets, and fur sales for trappers">“An app that tracks trap lines, sets, and fur sales for trappers”</button>
+    <button type="button" class="chip" data-idea="An app that tracks pump-outs and service due dates for septic companies">“An app that tracks pump-outs and service due dates for septic companies”</button>
+  </div>
+
+  <div class="card">
+    <form id="suggest-form" novalidate>
+      <label for="f-idea">Your app idea — what should it do? *</label>
+      <textarea id="f-idea" name="idea" rows="4" required placeholder="An app that tracks … for …"></textarea>
+
+      <label for="f-whofor">Who is it for, and what work does it help with?</label>
+      <textarea id="f-whofor" name="whofor" rows="3" placeholder="e.g. Two-truck plumbing outfit — keeping up with water-heater installs and warranty dates"></textarea>
+
+      <label for="f-name">Your name <span class="opt">(optional)</span></label>
+      <input type="text" id="f-name" name="name" autocomplete="name">
+
+      <label for="f-email">Your email <span class="opt">(optional — only if you want to hear back)</span></label>
+      <input type="email" id="f-email" name="email" autocomplete="email" placeholder="you@example.com">
+
+      <button type="submit" class="submit">Send my suggestion</button>
+      <p class="formmsg" id="form-msg" aria-live="polite"></p>
+      <p class="small">The button opens your email app with everything filled in — just press send there. Nothing is sent from this page itself, and nothing you type is stored here.</p>
+      <noscript><p class="small">Your browser has JavaScript off, so the button can't fill in the email for you. Just write to us directly at the address below with the subject “App suggestion”.</p></noscript>
+    </form>
+  </div>
+
+  <p><strong>No email app opening?</strong> Write to us directly at <a href="mailto:whitewolfbackoffice@gmail.com?subject=App%20suggestion">whitewolfbackoffice@gmail.com</a> with the subject <strong>App suggestion</strong> — tell us what the app should do and who it's for.</p>
+
+  <h2>See what we've already built</h2>
+  <p>Tree-service bidding, snow contracts, farm records, fitness logging, job-profit tracking and more — every app is a one-time purchase with no subscription.</p>
+  <a class="cta" href="https://travisbriggs.gumroad.com">Browse the White Wolf Apps store</a>
+
+  <p class="fineprint"><strong>The honest fine print:</strong> sending an idea is friendly, not a transaction — it doesn't create any ownership, partnership, or payment claim, and there's no prize or royalty for ideas we use. If we build an app from a suggestion, White Wolf Apps designs it, builds it, and sells it as its own product, and we can't promise we'll build any particular idea or reply to every message. Suggest away anyway — the good ones genuinely steer what we make next.</p>
+</main>
+<footer class="site">
+  <div class="rule">White Wolf Apps · Questions or suggestions: <a href="mailto:whitewolfbackoffice@gmail.com">whitewolfbackoffice@gmail.com</a> · Store: <a href="https://travisbriggs.gumroad.com">travisbriggs.gumroad.com</a></div>
+</footer>
+<script>
+function buildSuggestionMailto(idea, whofor, name, email){
+  var notGiven = "(not given)";
+  var body = "App idea:\n" + idea + "\n\n" +
+    "Who it's for / work it helps with:\n" + (whofor || notGiven) + "\n\n" +
+    "Name: " + (name || notGiven) + "\n" +
+    "Email: " + (email || notGiven) + "\n\n" +
+    "— Sent from the White Wolf Apps “Suggest an App” page";
+  return "mailto:whitewolfbackoffice@gmail.com" +
+    "?subject=" + encodeURIComponent("App suggestion") +
+    "&body=" + encodeURIComponent(body);
+}
+document.querySelectorAll(".chip").forEach(function(chip){
+  chip.addEventListener("click", function(){
+    var box = document.getElementById("f-idea");
+    box.value = chip.getAttribute("data-idea");
+    box.focus();
+  });
+});
+document.getElementById("suggest-form").addEventListener("submit", function(ev){
+  ev.preventDefault();
+  var idea = document.getElementById("f-idea").value.trim();
+  var whofor = document.getElementById("f-whofor").value.trim();
+  var name = document.getElementById("f-name").value.trim();
+  var email = document.getElementById("f-email").value.trim();
+  var msg = document.getElementById("form-msg");
+  if(!idea){
+    msg.textContent = "Tell us the app idea first — even one sentence is plenty.";
+    msg.className = "formmsg err";
+    document.getElementById("f-idea").focus();
+    return;
+  }
+  msg.textContent = "Opening your email app… just press send there and it reaches us.";
+  msg.className = "formmsg";
+  window.location.href = buildSuggestionMailto(idea, whofor, name, email);
+});
+</script>
+</body>
+</html>
